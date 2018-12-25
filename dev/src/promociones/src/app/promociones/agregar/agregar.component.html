@@ -1,0 +1,11 @@
+<form [formGroup]='form' (ngSubmit)='crear()'>
+  <label>
+    Nombre
+    <input type='text' formControlName='nombre'>
+  </label>
+  <label>
+    Descripción
+    <input type='text' formControlName='descripcion'>
+  </label>
+  <button type="submit" [disabled]="!form.valid">Agregar</button>
+</form>

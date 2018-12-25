@@ -1,0 +1,8 @@
+<div>
+  <pre>lista de promociones</pre>
+  <a routerLink='/agregar'>Agregar</a>
+  <li *ngFor='let p of promociones$ | async'>
+    <div>{{p.data | json}}</div>
+    <a routerLink='/eliminar/{{p.id}}'>X</a>
+  </li>
+</div>
