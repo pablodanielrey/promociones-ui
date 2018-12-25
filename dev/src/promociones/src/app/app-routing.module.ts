@@ -8,7 +8,8 @@ import { AgregarComponent } from './promociones/agregar/agregar.component';
 const routes: Routes = [
   { path: 'lista', component: ListaComponent },
   { path: 'eliminar/:id', component: EliminarComponent },
-  { path: 'agregar', component: AgregarComponent }
+  { path: 'agregar', component: AgregarComponent },
+  { path: '**', redirectTo: '/lista' }
 ];
 
 @NgModule({
