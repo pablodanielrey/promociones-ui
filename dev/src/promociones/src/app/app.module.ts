@@ -12,20 +12,24 @@ import { AppComponent } from './app.component';
 import { ListaComponent } from './promociones/lista/lista.component';
 import { AgregarComponent } from './promociones/agregar/agregar.component';
 import { EliminarComponent } from './promociones/eliminar/eliminar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RestaurarComponent } from './promociones/restaurar/restaurar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaComponent,
     AgregarComponent,
-    EliminarComponent
+    EliminarComponent,
+    RestaurarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
