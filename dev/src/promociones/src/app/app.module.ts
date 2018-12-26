@@ -12,8 +12,10 @@ import { AppComponent } from './app.component';
 import { ListaComponent } from './promociones/lista/lista.component';
 import { AgregarComponent } from './promociones/agregar/agregar.component';
 import { EliminarComponent } from './promociones/eliminar/eliminar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestaurarComponent } from './promociones/restaurar/restaurar.component';
+
+import { MyMaterialModule } from './material.module';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
@@ -27,10 +29,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MyMaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

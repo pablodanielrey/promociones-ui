@@ -1,20 +1,24 @@
 <div>
-  <pre>lista de promociones activas</pre>
   <a routerLink='/agregar'>Agregar</a>
-  <li *ngFor='let p of promociones$ | async'>
-    <div *ngIf='p.data.eliminado'>
-      (Eliminado)
-    </div>
-    <div>{{p.data | json}}</div>
-    <a routerLink='/eliminar/{{p.id}}'>X</a>
-    <a routerLink='/restaurar/{{p.id}}'>R</a>
-  </li>
+
+  <pre>lista de promociones activas</pre>
+  <mat-list>
+    <mat-list-item *ngFor='let p of promociones$ | async'>
+        valor : {{p.data | json}}
+        <a routerLink='/eliminar/{{p.id}}'>X</a>
+    </mat-list-item>
+  </mat-list>
 </div>
 
 <div>
-    <pre>lista de promociones eliminadas</pre>
-    <li *ngFor='let p of promociones_eliminadas$ | async'>
-      <div>{{p.data | json}}</div>
-      <a routerLink='/restaurar/{{p.id}}'>R</a>
-    </li>
-  </div>
+  <pre>lista de promociones eliminadas</pre>
+  <mat-list>
+    <mat-list-item *ngFor='let p of promociones_eliminadas$ | async'>
+        <mat-icon mat-icon mat-list-icon>Folder</mat-icon>
+        <h1 mat-line>{{p.data | json}}</h1>
+        <p mat-line>
+          <a routerLink='/restaurar/{{p.id}}'>R</a>
+        </p>
+    </mat-list-item>
+  </mat-list>
+</div>
