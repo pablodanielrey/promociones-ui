@@ -4,6 +4,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
+
+interface Promo {
+  nombre: string;
+  descripcion: string;
+  eliminado: Date;
+}
+
 @Component({
   selector: 'app-lista',
   templateUrl: './lista.component.html',
@@ -18,7 +25,7 @@ export class ListaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.promociones$ = this.db.collection('promociones').snapshotChanges().pipe(
+    this.promociones$ = this.db.collection<Promo>('promociones').snapshotChanges().pipe(
       map(actions => 
         actions.map(
           a => {
@@ -31,7 +38,7 @@ export class ListaComponent implements OnInit {
       )
     );
     
-    this.promociones_eliminadas$ = this.db.collection('promociones').snapshotChanges().pipe(
+    this.promociones_eliminadas$ = this.db.collection<Promo>('promociones').snapshotChanges().pipe(
       map(documents => 
         documents.map(
           d => {

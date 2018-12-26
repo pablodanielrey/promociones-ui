@@ -14,6 +14,7 @@ import { AgregarComponent } from './promociones/agregar/agregar.component';
 import { EliminarComponent } from './promociones/eliminar/eliminar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestaurarComponent } from './promociones/restaurar/restaurar.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RestaurarComponent } from './promociones/restaurar/restaurar.component'
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
