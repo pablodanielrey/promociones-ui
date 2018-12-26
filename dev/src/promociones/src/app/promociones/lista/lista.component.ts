@@ -49,5 +49,9 @@ export class ListaComponent implements OnInit {
     );
   }
 
+  comprar(pid) {
+    this.router.navigate(['/sistema/eliminar/' + pid]);
+  }
+
   
 }

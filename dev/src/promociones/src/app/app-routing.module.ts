@@ -6,12 +6,17 @@ import { EliminarComponent } from './promociones/eliminar/eliminar.component';
 import { RestaurarComponent } from './promociones/restaurar/restaurar.component';
 import { AgregarComponent } from './promociones/agregar/agregar.component';
 
+import { SistemaComponent } from './sistema/sistema.component';
+
 const routes: Routes = [
-  { path: 'lista', component: ListaComponent },
-  { path: 'eliminar/:id', component: EliminarComponent },
-  { path: 'restaurar/:id', component: RestaurarComponent },
-  { path: 'agregar', component: AgregarComponent },
-  { path: '**', redirectTo: '/lista' }
+  { path: 'sistema', component: SistemaComponent , children: [
+    { path: 'lista', component: ListaComponent },
+    { path: 'eliminar/:id', component: EliminarComponent },
+    { path: 'restaurar/:id', component: RestaurarComponent },
+    { path: 'agregar', component: AgregarComponent }
+  ]},
+
+  { path: '**', redirectTo: '/sistema/lista' }
 ];
 
 @NgModule({

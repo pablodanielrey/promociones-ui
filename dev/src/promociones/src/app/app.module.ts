@@ -14,6 +14,8 @@ import { AgregarComponent } from './promociones/agregar/agregar.component';
 import { EliminarComponent } from './promociones/eliminar/eliminar.component';
 import { RestaurarComponent } from './promociones/restaurar/restaurar.component';
 
+import { SistemaComponent } from './sistema/sistema.component';
+
 import { MyMaterialModule } from './material.module';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -24,7 +26,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ListaComponent,
     AgregarComponent,
     EliminarComponent,
-    RestaurarComponent
+    RestaurarComponent,
+    SistemaComponent
   ],
   imports: [
     BrowserModule,

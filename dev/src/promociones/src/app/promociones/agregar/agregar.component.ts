@@ -24,7 +24,8 @@ export class AgregarComponent implements OnInit {
   constructor(private fb: FormBuilder, private db: AngularFirestore) { 
     this.form = fb.group({
       nombre: [''],
-      descripcion: ['']
+      descripcion: [''],
+      imagen:['']
     });
   }
 
