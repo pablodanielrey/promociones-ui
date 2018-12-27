@@ -1,29 +1,31 @@
   
   <div>
-  <a routerLink='/agregar'>Agregar</a>
-  <pre>lista de promociones activas</pre>
-
 
 <!--  <mat-list>
     <mat-list-item *ngFor='let p of promociones$ | async'>
     -->
-      <mat-card class="example-card" *ngFor='let p of promociones$ | async'>
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Paesano</mat-card-title>
-              <mat-card-subtitle>{{p.data.nombre}}</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image src="{{p.data.imagen}}" alt="imagen de comida">
-          <mat-card-content>
-            <p>
-              {{p.descripcion}}
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button (click)='comprar(p.id)'>COMPRAR</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
+      <div *ngFor='let p of promociones$ | async'>
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Paesano</mat-card-title>
+                <mat-card-subtitle>{{p.data.nombre}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{p.data.imagen}}" alt="imagen de comida">
+            <mat-card-content>
+              <p>
+                {{p.data.descripcion}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)='comprar(p.id)'>COMPRAR</button>
+              <button mat-button>REGALAR</button>
+            </mat-card-actions>
         </mat-card>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+      </div>
 <!--
     </mat-list-item>
   </mat-list>
@@ -31,7 +33,7 @@
 
 
 
-
+  <!--
   <pre>lista de promociones eliminadas</pre>
   <mat-list>
     <mat-list-item *ngFor='let p of promociones_eliminadas$ | async'>
@@ -42,10 +44,7 @@
         </p>
     </mat-list-item>
   </mat-list>
-  <button mat-button>prueba de boton</button>
-  <i class="material-icons">
-    announcement
-  </i>
+-->
 <!--
   <mat-list>
 

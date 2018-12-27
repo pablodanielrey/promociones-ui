@@ -8,9 +8,10 @@
           <button mat-icon-button class="icono" color="" (click)="drawer.toggle()">
               <mat-icon>menu</mat-icon>
           </button>
-          <span>Apps FCE</span>
+          <!-- <span>Promociones Paesano</span> -->
       </div>
     
+      <!--
       <div>
             <button mat-icon-button [matMenuTriggerFor]="menu">
                     <mat-icon>apps</mat-icon>
@@ -25,6 +26,7 @@
             <mat-icon>settings</mat-icon>
           </button>
       </div>
+      -->
         
     </mat-toolbar>
     
@@ -35,10 +37,15 @@
     <!-- Menu pincipal -->
     <mat-drawer #drawer class="menu" mode="over">
         <mat-toolbar color="primary">
-            <span>Apps FCE</span>
+            <span>Promociones</span>
         </mat-toolbar>
-        <button class="btnMenu" mat-button routerLink="/sistema/inicio" (click)='cerrar_menu(drawer)'><mat-icon class="iconoMenu">filter_1</mat-icon>Inicio</button>
-        <button class="btnMenu" mat-button routerLink="/sistema/guia/identidad"><mat-icon class="iconoMenu">filter_2</mat-icon>Guía</button>
+        
+        <button *ngFor='let c of categorias$ | async' class="btnMenu" mat-button  (click)='cerrar_menu(drawer)'>
+            <a style='color:inherit; text-decoration: none' routerLink="/sistema/lista/{{c.nombre}}">
+                <mat-icon class="iconoMenu">{{c.icono}}</mat-icon>{{c.nombre}}
+            </a>
+        </button>
+        
     </mat-drawer>
     
     <!-- Menu Configuración -->

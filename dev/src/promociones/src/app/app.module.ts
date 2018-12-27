@@ -19,6 +19,8 @@ import { SistemaComponent } from './sistema/sistema.component';
 import { MyMaterialModule } from './material.module';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { CompradasComponent } from './promociones/compradas/compradas.component';
+import { ComprarComponent } from './promociones/comprar/comprar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AgregarComponent,
     EliminarComponent,
     RestaurarComponent,
-    SistemaComponent
+    SistemaComponent,
+    CompradasComponent,
+    ComprarComponent
   ],
   imports: [
     BrowserModule,

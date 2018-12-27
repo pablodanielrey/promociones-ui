@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+
+interface Categoria {
+  nombre: string;
+  icono: string;
+}
 
 @Component({
   selector: 'app-sistema',
@@ -7,9 +15,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SistemaComponent implements OnInit {
 
-  constructor() { }
+  categorias$: Observable<Categoria[]>;
+
+  constructor(private db: AngularFirestore) { }
 
   ngOnInit() {
+    this.categorias$ = this.db.collection<Categoria>('categorias').valueChanges();
   }
 
   cerrar_menu(d) {
