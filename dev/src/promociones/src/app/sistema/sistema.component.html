@@ -11,22 +11,20 @@
           <!-- <span>Promociones Paesano</span> -->
       </div>
     
-      <!--
       <div>
-            <button mat-icon-button [matMenuTriggerFor]="menu">
-                    <mat-icon>apps</mat-icon>
-                  </button>
-                  <mat-menu #menu="matMenu">
-                        <mat-card>Sistema</mat-card>
-                        <mat-card>Sistema</mat-card>
-                        <mat-card>Sistema</mat-card>
-    
-                    </mat-menu>
-          <button mat-icon-button color="" (click)="drawer2.toggle()">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>apps</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <mat-card><a routerLink='/sistema/compradas'>Compras</a></mat-card>
+        </mat-menu>
+
+        <!--
+            <button mat-icon-button color="" (click)="drawer2.toggle()">
             <mat-icon>settings</mat-icon>
-          </button>
+            </button>
+        -->
       </div>
-      -->
         
     </mat-toolbar>
     
